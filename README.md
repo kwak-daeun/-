@@ -23,3 +23,32 @@
  ### View
  * Model 데이터 렌더링을 담당하여, HTML, Output을 생성한다.
  * 여러가지 템플 엔진이 존재한다.(ex. JSP, Thymleaf ...) 
+ 
+ ### RequestMapping
+ * 요청에 대한 어떤 controller, 어떤 메소드가 처리될지 맵핑하기 위한 어노테이션
+ * 클래스나 메소드 선언부에 @RequestMapping과 함께 URL을 명시한다.
+ * viewName 생략시 @RequestMapping의 Path로 설정한 URL이 default viewName
+ 
+ ### RequestMapping 속성들
+ 
+ 1) value(String[]) : URL 값
+  ex) @RequestMapping(/"admin/login")
+  
+ 2) method(RequestMethod[]) : HTTP Request 메소드 값
+  - GET, POST, PUT, DELETE ...
+ 
+ 3) params(String[]) : HTTP Request 파라미터
+  * @RequestParam : 사용자가 원하는 매개변수에 값을 매핑하기 위해 사용한다.
+  
+  ex) @PostMapping("/member")
+  public String member(@RequestParm String name, @RequstParm Int age)
+  
+  여기서 RequestParam은 생략 가능하다. 사용자가 입력한 key값과 매개변수 이름을 비교하여 값을 넣어주기 때문이다.
+  
+  * @PatuVariable : url 경로를 변수화하여 사용할 수 있도록 해준다.
+  
+  ex)
+  @RequestMapping("/member/{name}/{age}")
+  public String member(@PathVariable("name") String name, @PathVariable("age") String age)
+  
+  >> RequestMapping의 {name}과 PathVariable의 String name을 매핑하여 준다.
