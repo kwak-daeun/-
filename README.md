@@ -40,8 +40,7 @@
  3) params(String[]) : HTTP Request 파라미터
   * @RequestParam : 사용자가 원하는 매개변수에 값을 매핑하기 위해 사용한다.
   
-  ex) @PostMapping("/member")
-  public String member(@RequestParm String name, @RequstParm Int age)
+  ex) <img src="readme/requestparam.png">
   
   여기서 RequestParam은 생략 가능하다. 사용자가 입력한 key값과 매개변수 이름을 비교하여 값을 넣어주기 때문이다.
   
@@ -51,4 +50,4 @@
   @RequestMapping("/member/{name}/{age}")
   public String member(@PathVariable("name") String name, @PathVariable("age") String age)
   
-  >> RequestMapping의 {name}과 PathVariable의 String name을 매핑하여 준다.
+  * RequestMapping의 {name}과 PathVariable의 String name을 매핑하여 준다.
