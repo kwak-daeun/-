@@ -51,3 +51,24 @@
   public String member(@PathVariable("name") String name, @PathVariable("age") String age)
   
   * RequestMapping의 {name}과 PathVariable의 String name을 매핑하여 준다.
+  
+## spring 특징
+
+### 제어 역행(IoC : Inversion of Control)
+
+ - 애플리케이션의 느슨한 결합을 도모.
+
+ - 컨트롤의 제어권이 사용자가 아니라 프레임워크에 있어 필요에 따라 스프링에서 사용자의 코드를 호출한다.
+
+ 
+
+### 의존성 주입(DI : Dependency Injection)
+
+ - 각각의 계층이나 서비스들 간에 의존성이 존재할 경우 프레임워크가 서로 연결시켜준다.
+
+
+
+### 관점지향 프로그래밍(AOP : Aspect-Oriented Programming)
+
+ - 트랜잭션이나 로깅, 보안과 같이 여러 모듈에서 공통적으로 사용하는 기능의 경우 해당 기능을 분리하여 관리할 수 있다.
+
